@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../partials/head'); %>
+  </head>
+  <body class="container">
+    <header><%- include('../partials/header'); %></header>
+
+    <main>
+      <div class="jumbotron">
+        <h1>Clientes registrados</h1>
+        <p><%= line %></p>
+
+        </table>
+        <table class="table" id="mondongo">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Documento</th>
+              <th scope="col">Nombre Completo</th>
+              <th scope="col">Fecha Nacimiento</th>
+            </tr>
+          </thead>
+
+          <% clientes.forEach(function(cliente) { %>
+          <tbody>
+            <tr>
+              <th scope="row"> <%= cliente._id %> </th>
+              <td> <%= cliente.documento %> </td>
+              <td> <%= cliente.nombreCompleto %> </td>
+              <td> <%= cliente.fNacimiento %> </td>
+            </tr>
+          </tbody>
+          <% }); %>
+
+        </table>
+      </div>
+    </main>
+
+    <footer><%- include('../partials/footer'); %></footer>
+  </body>
+</html>
