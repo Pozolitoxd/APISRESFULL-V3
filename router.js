@@ -21,6 +21,8 @@ router.post('/productos', controladoresProductos.nuevoProducto)
 router.put('/productos/:id', controladoresProductos.editarProducto)
 router.delete('/productos/:id', controladoresProductos.eliminarProducto)
 
+router.post('/insertar',controladoresProductos.insertarP)
+
 // endpoints para usuarios
 
 router.get('/usuarios', listarUsuarios)

@@ -64,3 +64,22 @@ exports.eliminarProducto = async (req, res) => {
         res.status(404).json({"Mensaje":"No se pudo eliminar el producto"})
 
 }
+
+
+exports.insertarP = async (req,res)=>{
+    let nuevoCosito={
+        referencia: req.body.referencia,
+        nombre: req.body.nombre,
+        descripcion: req.body.descripcion,
+        precio: req.body.precio,
+        stock: req.body.stock,
+        imagen: req.body.imagen,
+        habilitado: req.body.habilitado === 'on'
+    }
+    let agregarCosito = await modelProductos.create(nuevoCosito)
+    if (agregarCosito)
+        res.status(200).redirect('/v3/productos')
+    else
+        res.status(404)
+}
+

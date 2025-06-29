@@ -1,42 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <%- include('../partials/head'); %>
-  </head>
-  <body class="container">
+
+<head>
+  <%- include('../partials/head'); %>
+</head>
+
+<body class="container">
+
+  <main>
     <header><%- include('../partials/header'); %></header>
 
-    <main>
-      <div class="jumbotron">
-        <h1>Clientes registrados</h1>
-        <p><%= line %></p>
+    <div class="jumbotron">
+      <h1>Clientes registrados</h1>
+      <p>
+        <%= line %>
+      </p>
 
-        </table>
-        <table class="table" id="mondongo">
-          <thead>
-            <tr>
-              <th scope="col">#</th>
-              <th scope="col">Documento</th>
-              <th scope="col">Nombre Completo</th>
-              <th scope="col">Fecha Nacimiento</th>
-            </tr>
-          </thead>
+      </table>
+      <table class="table" id="mondongo">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Documento</th>
+            <th scope="col">Nombre Completo</th>
+            <th scope="col">Fecha Nacimiento</th>
+          </tr>
+        </thead>
 
-          <% clientes.forEach(function(cliente) { %>
+        <% clientes.forEach(function(cliente) { %>
           <tbody>
             <tr>
-              <th scope="row"> <%= cliente._id %> </th>
-              <td> <%= cliente.documento %> </td>
-              <td> <%= cliente.nombreCompleto %> </td>
-              <td> <%= cliente.fNacimiento %> </td>
+              <th scope="row">
+                <%= cliente._id %>
+              </th>
+              <td>
+                <%= cliente.documento %>
+              </td>
+              <td>
+                <%= cliente.nombreCompleto %>
+              </td>
+              <td>
+                <%= cliente.fNacimiento %>
+              </td>
             </tr>
           </tbody>
           <% }); %>
 
-        </table>
-      </div>
-    </main>
+      </table>
+    </div>
 
-    <footer><%- include('../partials/footer'); %></footer>
-  </body>
+  </main>
+
+
+
+
+
+  <footer><%- include('../partials/footer'); %></footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+    crossorigin="anonymous"></script>
+  <script src=""></script>
+</body>
+
 </html>
